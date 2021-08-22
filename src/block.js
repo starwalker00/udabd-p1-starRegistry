@@ -38,14 +38,16 @@ class Block {
     validate() {
         let self = this;
         return new Promise((resolve, reject) => {
+            //resolve(console.log("validate"))
             // Save in auxiliary variable the current block hash
-                                            
+            let currentHash = self.hash
             // Recalculate the hash of the Block
+            // with block.hash set to null
+            let blockHash = SHA256(JSON.stringify({...self, hash: null})).toString()
             // Comparing if the hashes changed
             // Returning the Block is not valid
-            
             // Returning the Block is valid
-
+            resolve(currentHash === blockHash)
         });
     }
 
@@ -62,9 +64,20 @@ class Block {
         // Getting the encoded data saved in the Block
         // Decoding the data to retrieve the JSON representation of the object
         // Parse the data to an object to be retrieve.
-
         // Resolve with the data if the object isn't the Genesis block
+        let blockData = hex2ascii(this.body)
 
+        if (this.height === 0) { // no useful data in genesis block
+            return {}
+        }
+        else {
+            try {
+                return JSON.parse(blockData)
+              } catch (error) {
+                console.error("Parsing error:", error)
+                throw error
+              }
+        }
     }
 
 }
