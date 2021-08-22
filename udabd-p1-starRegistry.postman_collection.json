@@ -1,0 +1,135 @@
+{
+	"info": {
+		"_postman_id": "e65e5e72-513c-4266-a8ea-04f932966d98",
+		"name": "udabd-p1-starRegistry",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:8000/block/height/0",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/block/height/0",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"block",
+						"height",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8000/blocks/1Ee4M53HACerjQq5uqBinAVNX8QdwLMGWj",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:8000/blocks/1Ee4M53HACerjQq5uqBinAVNX8QdwLMGWj",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"blocks",
+						"1Ee4M53HACerjQq5uqBinAVNX8QdwLMGWj"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8000/requestValidation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "address",
+							"value": "1Ee4M53HACerjQq5uqBinAVNX8QdwLMGWj",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/requestValidation",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"requestValidation"
+					],
+					"query": [
+						{
+							"key": "address",
+							"value": "1Ee4M53HACerjQq5uqBinAVNX8QdwLMGWj",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8000/submitstar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"address\": \"1Ee4M53HACerjQq5uqBinAVNX8QdwLMGWj\",\r\n    \"signature\": \"IDl+VvTF1u6hj6qg+Ey2kiNb354RbgvYL1lQJfe0AP27ubbPEt/vOypHdV5R58VH3qo6XehzVyyrPrsEgTurF1A=\",\r\n    \"message\": \"1Ee4M53HACerjQq5uqBinAVNX8QdwLMGWj:1629626407:starRegistry\",\r\n    \"star\": {\r\n        \"dec\": \"68° 52' 56.9\",\r\n        \"ra\": \"16h 29m 1.0s\",\r\n        \"story\": \"Testing the story 3\"\r\n        }\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/submitstar",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"submitstar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8000/validateChain",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/validateChain",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"validateChain"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
