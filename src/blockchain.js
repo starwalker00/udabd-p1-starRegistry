@@ -84,7 +84,7 @@ class Blockchain {
                     resolve(block)
                 }
                 catch (error) {
-                    console.error("Parsing error:", error)
+                    console.error("_addBlock error:", error)
                     reject(error)
                 }
             }
@@ -129,21 +129,23 @@ class Blockchain {
             try {
                 let messageTime = parseInt(message.split(':')[1])
                 let currentTime = parseInt(new Date().getTime().toString().slice(0, -3))
-                if ( currentTime >= messageTime + 5*6000 ) {
+                if ( currentTime >= messageTime + 5*60 ) {
                     throw("Time expired")
                 }
-                if ( !(bitcoinMessage.verify(message, address, signature)) ) {
+                else if ( !(bitcoinMessage.verify(message, address, signature)) ) {
                     throw("Signature verification failed")
                 }
-                let newBlock = new BlockClass.Block(
-                    {
-                        owner: address,
-                        message: message,
-                        signature: signature,
-                        star: star
-                    })
-                let addedBlock = self._addBlock(newBlock)
-                resolve(addedBlock)
+                else{ //create block
+                    let newBlock = new BlockClass.Block(
+                        {
+                            owner: address,
+                            message: message,
+                            signature: signature,
+                            star: star
+                        })
+                    let addedBlock = self._addBlock(newBlock)
+                    resolve(addedBlock)
+                }
             }
             catch(error){
                 reject(error)
@@ -227,7 +229,7 @@ class Blockchain {
             for (let i = 1; i <= chainHeight; i++) {
                 let previousBlock = self.chain[i-1]
                 let currentBlock = self.chain[i]
-                // check previous block hash match
+                // check previous block hash matches
                 if (!(previousBlock.hash === currentBlock.previousBlockHash)) {
                     errorLog.push({
                         block: currentBlock,

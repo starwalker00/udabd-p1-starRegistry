@@ -1,3 +1,8 @@
+# Ressources
+
+- [bitcoin wallet generator](https://www.bitaddress.org)
+- [bitcoin signature tool](https://reinproject.org/bitcoin-signature-tool)
+
 # Private Blockchain Application
 
 You are starting your journey as a Blockchain Developer, this project allows you to demonstrate

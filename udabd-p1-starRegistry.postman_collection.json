@@ -26,7 +26,7 @@
 			"response": []
 		},
 		{
-			"name": "localhost:8000/blocks/1Ee4M53HACerjQq5uqBinAVNX8QdwLMGWj",
+			"name": "localhost:8000/blocks/1Ay9wCUuuXTUrfCiq2c8vw5jQCtYrcs4BL",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -38,14 +38,14 @@
 					"formdata": []
 				},
 				"url": {
-					"raw": "localhost:8000/blocks/1Ee4M53HACerjQq5uqBinAVNX8QdwLMGWj",
+					"raw": "localhost:8000/blocks/1Ay9wCUuuXTUrfCiq2c8vw5jQCtYrcs4BL",
 					"host": [
 						"localhost"
 					],
 					"port": "8000",
 					"path": [
 						"blocks",
-						"1Ee4M53HACerjQq5uqBinAVNX8QdwLMGWj"
+						"1Ay9wCUuuXTUrfCiq2c8vw5jQCtYrcs4BL"
 					]
 				}
 			},
@@ -93,7 +93,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"address\": \"1Ee4M53HACerjQq5uqBinAVNX8QdwLMGWj\",\r\n    \"signature\": \"IDl+VvTF1u6hj6qg+Ey2kiNb354RbgvYL1lQJfe0AP27ubbPEt/vOypHdV5R58VH3qo6XehzVyyrPrsEgTurF1A=\",\r\n    \"message\": \"1Ee4M53HACerjQq5uqBinAVNX8QdwLMGWj:1629626407:starRegistry\",\r\n    \"star\": {\r\n        \"dec\": \"68° 52' 56.9\",\r\n        \"ra\": \"16h 29m 1.0s\",\r\n        \"story\": \"Testing the story 3\"\r\n        }\r\n}\r\n",
+					"raw": "{\r\n    \"address\": \"1Ay9wCUuuXTUrfCiq2c8vw5jQCtYrcs4BL\",\r\n    \"signature\": \"IMPzQpQbZ3tD8YPnvpU/gjon8Bz3dm5NXSjOJKroE2H5gmwtzQiizOoPi38lIacn9AmwhU6MBNr2AA4Z17s7TcE=\",\r\n    \"message\": \"1Ee4M53HACerjQq5uqBinAVNX8QdwLMGWj:1629918226:starRegistry\",\r\n    \"star\": {\r\n        \"dec\": \"68° 52' 56.9\",\r\n        \"ra\": \"16h 29m 1.0s\",\r\n        \"story\": \"Testing the story 4\"\r\n        }\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -126,6 +126,46 @@
 					"port": "8000",
 					"path": [
 						"validateChain"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8000/block/hash/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/block/hash/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"block",
+						"hash",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8000/block/hash/ bis",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/block/hash/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"block",
+						"hash",
+						""
 					]
 				}
 			},
